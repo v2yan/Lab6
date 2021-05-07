@@ -68,29 +68,36 @@ class JournalEntry extends HTMLElement {
    * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set
    */
   set entry(entry) {
-    /* 
-     * TODO: set the entry title, date, and content fields in this component
-     */
-    
-    // CODE GOES HERE
 
+     let shadow = this.shadowRoot;
+
+     // select elements in journal entry in shadowRoot
+     let title = shadow.querySelector('.entry-title');
+     let date = shadow.querySelector('.entry-date');
+     let content = shadow.querySelector('.entry-content');
+
+    // set entry title, date, content
+     title.innerHTML = entry.title;
+     date.innerHTML = entry.date;
+     content.innerHTML = entry.content;
+
+
+     // if entry contains image
     if (entry.image) {
+
       let entryImage;
-      /*
-       * TODO: if the entry contains an image resource,
-       * 1. create an image element with the correct class
-       * 2. set the image src and alt attributes
-       * 3. append the image element to the appropriate location in this component
-       */
 
-      // CODE GOES HERE vvv
+      // create image
+      entryImage = document.createElement('img');
+      
+      // set image class name, src, alt
+      entryImage.className = 'entry-image';
+      entryImage.src = entry.image.src;
+      entryImage.alt = entry.image.alt;
 
-
-
-
-
-      // CODE GOES HERE ^^^
-
+      // append image to entry
+      shadow.querySelector('.entry').append(entryImage);
+      
       /* ------------- do not edit this code, it is for your debugging purposes ------------- */
       try {
         window.logCheckpoint('"entryImage"', imgExample, entryImage);
