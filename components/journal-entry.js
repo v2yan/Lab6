@@ -116,16 +116,13 @@ class JournalEntry extends HTMLElement {
        * 3. append the audio element to the appropriate location in this component
        */
 
-      // CODE GOES HERE vvv
+      entryAudio = document.createElement('audio');
 
+      entryAudio.className = 'entry-audio';
+      entryAudio.src = entry.audio;
+      entryAudio.controls = true;
 
-
-
-
-
-      // CODE GOES HERE ^^^
-      
-
+      shadow.querySelector('.entry').append(entryAudio);
       
       /* ------------- do not edit this code, it is for your debugging purposes ------------- */
       try {
