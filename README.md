@@ -3,3 +3,5 @@
 ## Authors:
 - Emily Jewik
 - Vivian Yan
+
+https://v2yan.github.io/Lab6/
